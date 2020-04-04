@@ -6,7 +6,7 @@
 int main()
 {
     ColorImage input;
-    input.Load("4.2.07.png");
+    input.Load("images/4.2.07.png");
     int brightness = 100;
     float gammabrighness = 0.7;
     change_using_brightness(&input, brightness);

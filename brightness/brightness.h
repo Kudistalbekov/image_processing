@@ -43,7 +43,7 @@ void change_using_brightness(ColorImage *img, int value)
             output(y, x).b = brightness_func((*img)(y, x).b, value);
         }
     }
-    output.Save("brighnessnewimg.png");
+    output.Save("images/brighnessnewimg.png");
 }
 //!change_using_gamma
 float gamma_func(int input, float brightness)
@@ -62,5 +62,5 @@ void change_using_gamma(ColorImage *img, float value)
             output(y, x).b = gamma_func((*img)(y, x).b, value);
         }
     }
-    output.Save("gammanewimg.png");
+    output.Save("images/gammanewimg.png");
 }
