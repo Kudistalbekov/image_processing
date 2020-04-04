@@ -35,14 +35,12 @@ void change_using_brightness(ColorImage *img, int value)
 {
     ColorImage output((*img).GetWidth(), (*img).GetHeight());
     for (int y = 0; y < output.GetHeight(); y++)
-    {
         for (int x = 0; x < output.GetWidth(); x++)
         {
             output(y, x).r = brightness_func((*img)(y, x).r, value);
             output(y, x).g = brightness_func((*img)(y, x).g, value);
             output(y, x).b = brightness_func((*img)(y, x).b, value);
         }
-    }
     output.Save("images/brighnessnewimg.png");
 }
 //!change_using_gamma
@@ -54,13 +52,24 @@ void change_using_gamma(ColorImage *img, float value)
 {
     ColorImage output((*img).GetWidth(), (*img).GetHeight());
     for (int y = 0; y < output.GetHeight(); y++)
-    {
         for (int x = 0; x < output.GetWidth(); x++)
         {
             output(y, x).r = gamma_func((*img)(y, x).r, value);
             output(y, x).g = gamma_func((*img)(y, x).g, value);
             output(y, x).b = gamma_func((*img)(y, x).b, value);
         }
-    }
     output.Save("images/gammanewimg.png");
+}
+//!inverse of the image
+void inverse(ColorImage *input)
+{
+    ColorImage output((*input).GetWidth(), (*input).GetHeight());
+    for (int y = 0; y < output.GetHeight(); y++)
+        for (int x = 0; x < output.GetWidth(); x++)
+        {
+            output(y, x).r = (2 ^ 8 - 1) - (*input)(y, x).r;
+            output(y, x).g = (2 ^ 8 - 1) - (*input)(y, x).g;
+            output(y, x).b = (2 ^ 8 - 1) - (*input)(y, x).b;
+        }
+    output.Save("images/inverse.png");
 }

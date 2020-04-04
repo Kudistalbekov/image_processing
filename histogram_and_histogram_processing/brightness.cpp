@@ -11,4 +11,5 @@ int main()
     float gammabrighness = 0.7;
     change_using_brightness(&input, brightness);
     change_using_gamma(&input, gammabrighness);
+    inverse(&input);
 }
