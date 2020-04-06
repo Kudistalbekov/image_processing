@@ -8,6 +8,5 @@ int main()
     brightness(-100, "images/4.2.07.png");
     contrast(2, "brightnew.png");
     //brightness(100, "images/4.2.07.png");
-    //gamma(0.7, "images/4.2.07.png");
-    // inverse("images/4.2.07.png");
+    inverse("images/5.1.13.png");
 }

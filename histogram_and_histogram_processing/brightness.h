@@ -36,9 +36,9 @@ void gamma(float bright, std::string path)
     {
         for (int x = 0; x < newimg.GetWidth(); x++)
         {
-            newimg(y, x).r = 255 * (pow((img(y, x).r / 255), bright));
-            newimg(y, x).g = 255 * (pow((img(y, x).g / 255), bright));
-            newimg(y, x).b = 255 * (pow((img(y, x).b / 255), bright));
+            newimg(y, x).r = 255 * pow((img(y, x).r / 255), bright);
+            newimg(y, x).g = 255 * pow((img(y, x).g / 255), bright);
+            newimg(y, x).b = 255 * pow((img(y, x).b / 255), bright);
         }
     }
     newimg.Save("gammanew.png");
