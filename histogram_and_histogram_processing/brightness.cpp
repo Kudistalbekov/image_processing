@@ -5,11 +5,9 @@
 #define WINDOWS_LEAN_AND_MEAN 1
 int main()
 {
-    ColorImage input;
-    input.Load("images/4.2.07.png");
-    int brightness = 100;
-    float gammabrighness = 0.7;
-    change_using_brightness(&input, brightness);
-    change_using_gamma(&input, gammabrighness);
-    inverse(&input);
+    brightness(-100, "images/4.2.07.png");
+    contrast(2, "brightnew.png");
+    //brightness(100, "images/4.2.07.png");
+    //gamma(0.7, "images/4.2.07.png");
+    // inverse("images/4.2.07.png");
 }
